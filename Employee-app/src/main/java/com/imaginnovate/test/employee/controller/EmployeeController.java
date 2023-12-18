@@ -36,6 +36,7 @@ public class EmployeeController {
 	public ResponseEntity<?> addemploye(@Validated @RequestBody EmployeeDto employeedto, BindingResult bindingResult) {
 		if (bindingResult.hasErrors()) {
 			Map<String, String> validationsMap = new HashMap<String, String>();
+			
 			for (FieldError error : bindingResult.getFieldErrors()) {
 				validationsMap.put(error.getField(), error.getDefaultMessage());
 			}
